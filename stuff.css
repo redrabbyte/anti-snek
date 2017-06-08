@@ -1,0 +1,67 @@
+#chat-donation-container
+{
+  max-width:730px;
+  min-width:100px;
+  position:relative;
+  margin:auto;
+}
+
+#chat-display
+{  
+  float:left;
+  width:340px;
+  height:800px;
+  border: 1px solid black;
+  margin: 0; padding: 0; outline: 0;
+  
+}
+
+#donations
+{
+  width: 340px;
+  height: 800px;
+  border: 1px solid black;
+  float:right;
+}
+
+#donation-settings
+{
+  width: 100%;
+  height: 10%;
+  background: #E2E1E0;
+}
+
+#donation-lines {
+  height: 90%;
+  width: 320px;
+  background: #EFEEF1;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow-y: auto;
+  display: inline-block;
+}
+
+#donation-lines > p {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 1.3em;
+}
+
+.emoticon {
+  vertical-align: middle;
+}
+
+.text-doantion {
+  color: #19171c;
+}
+
+.link-donation {
+  color: #FF0000;
+}
+
+#footer {
+  width: 100%;
+  min-height: 20px;
+  position: absolute;
+  bottom: 0;
+}
