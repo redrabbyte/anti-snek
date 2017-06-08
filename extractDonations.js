@@ -183,7 +183,7 @@ function changeChannel(channel) {
   var chat = document.createElement('iframe');
   chat.frameBorder = '0';
   chat.scrolling = 'no';
-  chat.src = 'http://www.twitch.tv/' + channel + '/chat';
+  chat.src = 'https://www.twitch.tv/' + channel + '/chat';
   chat.id = 'chat-embed';
   chat.height = '800';
   chat.width = '340';
@@ -235,7 +235,10 @@ window.onload = function ()
   
   var channel_param = findGetParameter('channel');
   if (channel_param != null)
+  {
     document.getElementById('channel-input').value = channel_param;
+    setCookie('channel_name', channel_param, 30);
+  }
   else
   {
     var channel_cookie = getCookie("channel_name");
