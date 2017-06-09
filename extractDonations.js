@@ -64,7 +64,7 @@ function onIRCMessage(msg) {
       nick = user_parts[0].split('!')[0];
       
       //if (/\bcheer\d+\b/.test(msg_text))
-      //if (/bits=\d+/g.test(msg_tag))
+      if (/bits=\d+/g.test(msg_tag))
       {
         //console.log('Server: channel: ' + channel + ', ircType: ' + ircType + ', user: '+ nick + ' : ' + msg_text);
         console.log(msg_tag + ' : ' + msg_text);
