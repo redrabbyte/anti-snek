@@ -3,6 +3,8 @@
 <head>
   <title> ANTI SNEK </title>
   <link rel="stylesheet" href="stuff.css">
+  <script src="utils.js"></script>
+  <script src="locationAware.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="extractDonations.js"></script>
   <script src="linkifyjs/linkify.js"></script>
@@ -19,12 +21,14 @@
       <div id="donation-settings">
         <center> 
           Bit Donations<br>
-          <a id="twitch-oauth-link" style="display:none;" href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&amp;client_id=c4rg0lsvfu12m2qbqz16ehj8omkd24&amp;redirect_uri=https://redrabbyte.github.io/anti-snek/&amp;scope=chat_login">
+          <a id="twitch-oauth-link" style="display:none;" href="">
             <img src="//ttv-api.s3.amazonaws.com/assets/connect_dark.png">
           </a>
           <input type="text" id="channel-input" style="display:none;"><button type="button" id="change-channel" style="display:none;">Change Channel</button>
           <br>
-          show only links? <input type="checkbox" id="filter-links-checkbox" style="display:none;">
+          <div id="options-area" style="display:none;">
+            show only links? <input type="checkbox" id="filter-links-checkbox">
+          </div>
         </center>
       </div>
       <div id="donation-lines">
