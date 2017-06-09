@@ -64,7 +64,7 @@ function onIRCMessage(msg) {
       nick = user_parts[0].split('!')[0];
       
       //if (/\bcheer\d+\b/.test(msg_text))
-      if (/bits=\d+/g.test(msg_tag))
+      //if (/bits=\d+/g.test(msg_tag))
       {
         //console.log('Server: channel: ' + channel + ', ircType: ' + ircType + ', user: '+ nick + ' : ' + msg_text);
         console.log(msg_tag + ' : ' + msg_text);
@@ -81,11 +81,16 @@ function onIRCMessage(msg) {
           
         parsed_msg = parseIRCEmotes(msg_tag, linkified_msg);
         
-        var chat_lines = document.getElementById('donation-lines');
+        var chat_lines = $('#donation-lines');
         var line = document.createElement('p');
         line.className += has_link_class;
         line.innerHTML = '<b>' + nick + '</b>: ' + parsed_msg;
-        chat_lines.appendChild(line);
+        
+        var auto_scroll = chat_lines[0].scrollHeight - chat_lines.scrollTop() == chat_lines.outerHeight();
+        
+        chat_lines[0].appendChild(line);
+        if (auto_scroll)
+          chat_lines.animate({scrollTop:chat_lines[0].scrollHeight}, 500);
       }
     }
     
