@@ -74,10 +74,14 @@ function onIRCMessage(msg) {
         linkified_msg = linkifyStr(msg_text);
         
         var has_link_class = 'text-donation';
+        var donation_display = 'block';
         
         //had a link
         if (linkified_msg != msg_text)
           has_link_class = 'link-donation';
+          
+        if (document.getElementById("filter-links-checkbox").checked)
+          donation_display = 'none';
           
         parsed_msg = parseIRCEmotes(msg_tag, linkified_msg);
         
@@ -85,6 +89,7 @@ function onIRCMessage(msg) {
         var line = document.createElement('p');
         line.className += has_link_class;
         line.innerHTML = '<b>' + nick + '</b>: ' + parsed_msg;
+        line.style.display = donation_display;
         
         var auto_scroll = chat_lines[0].scrollHeight - chat_lines.scrollTop() == chat_lines.outerHeight();
         
