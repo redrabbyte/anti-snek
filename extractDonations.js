@@ -200,7 +200,6 @@ var connection;
 
 var emote_url = 'https://static-cdn.jtvnw.net/emoticons/v1/';
 
-
 //check for twitch oauth parameters
 hash_string = window.location.hash.substr(1);
 hash_string.split('&').forEach(function(entry) {

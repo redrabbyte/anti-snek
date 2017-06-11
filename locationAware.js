@@ -3,7 +3,12 @@
 
 var redir_url;
 
-$.getScript(window.location.host + '.js', function()
+$.ajax({
+  url: window.location.host + '.js',
+  dataType: "script",
+  async: false,
+  success: function()
 {
     redir_url = 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&amp;client_id=' + client_id + '&amp;redirect_uri=' + oauth_redir_url + '&amp;scope=chat_login';
+}
 });
